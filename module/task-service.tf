@@ -8,7 +8,7 @@ resource "aws_ecs_service" "bhub-ecs-service" {
   
   load_balancer {
     target_group_arn = module.alb.target_group_arns[0]
-    container_name = var.container_name
+    container_name = var.image_name
     container_port = var.container_port
   }
   

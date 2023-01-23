@@ -1,17 +1,17 @@
 resource "aws_ecs_task_definition" "bhub_task_def" {
   depends_on = [aws_cloudwatch_log_group.bhub_cw_log_group]
   family = var.ecs_service_name
-  container_definitions = <<DEFINITION
+  container_definitions = jsonencode(
 [
   {
-    "name": "${var.container_name}",
+    "name": "${var.image_name}",
     "image": "${var.container_name}:latest",
     "essential": true,
     "portMappings": [
       {
         "protocol": "tcp",
-        "containerPort": ${var.container_port},
-        "hostPort": ${var.container_port}
+        "containerPort": var.container_port,
+        "hostPort": var.container_port
       }
     ],
         "logConfiguration": {
@@ -21,14 +21,14 @@ resource "aws_ecs_task_definition" "bhub_task_def" {
             "awslogs-region": "us-east-1",
             "awslogs-stream-prefix": "ecs"
           }
-        }
+        },
+        "environment": var.task_environment_variables == [] ? null : var.task_environment_variables
   }
-]
+] )
 
-DEFINITION
 
-  cpu = 2048
-  memory = 4096
+  cpu = 512
+  memory = 1024
   requires_compatibilities = ["FARGATE"]
   network_mode = "awsvpc"
   execution_role_arn = aws_iam_role.task_def_role.arn

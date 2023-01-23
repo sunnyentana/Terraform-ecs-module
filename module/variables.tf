@@ -38,3 +38,11 @@ variable "cluster_arn" {}
 # variable "log_name" {}
 # variable "cluster_count" {}
 # variable "family_name" {}
+variable "internal" {}
+variable "image_name" {}
+variable "task_environment_variables" {
+  default = []
+}
+variable "env_value" {
+  
+}

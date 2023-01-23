@@ -10,7 +10,7 @@
     source = "terraform-aws-modules/alb/aws"
     name = var.abl_name
     load_balancer_type = "application"
-
+    internal = var.internal
     vpc_id = var.vpc_id
     subnets = var.pub_subnet_ids
     security_groups = [module.alb-sg.security_group_id]
