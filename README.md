@@ -15,8 +15,6 @@ _The following components are deployed:_
 
 # Usage
 
-*** 
-
 ## ECS Module
 
 ```
@@ -82,8 +80,6 @@ containers={
 
 # Inputs
 
-***
-
 |Name              |Description                                          |Type   |Default|
 |------------------|-----------------------                              |-------|-------|
 |container_name    |Name of your container                               |string |""     |
@@ -94,8 +90,6 @@ containers={
 |ecs_desired_count |count of the task by your service at a moment        |number |1      |
 
 # Outputs
-
-***
 
 |Name              |Description                        |                                    
 |------------------|-----------------------            |                
