@@ -4,8 +4,8 @@ resource "aws_ecs_task_definition" "bhub_task_def" {
   container_definitions = jsonencode(
 [
   {
-    "name": "${var.image_name}",
-    "image": "${var.container_name}:latest",
+    "name": "${var.container_name}",
+    "image": "${var.image_name}:latest",
     "essential": true,
     "portMappings": [
       {

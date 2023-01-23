@@ -10,6 +10,7 @@ containers={
 
         # cluster_name = "bhub-frontend-dev"
         ecs_desired_count = 1
+        image_name = "nginx"
         container_name = "nginx" 
         ecs_service_name = "bhub-frontend-ecs-service"
       #  container_definition_file = "container_definations.json"
