@@ -14,7 +14,7 @@
     vpc_id = var.vpc_id
     subnets = var.pub_subnet_ids
     security_groups = [module.alb-sg.security_group_id]
-    # depends_on = [aws_cloudwatch_log_group.bhub_cw_log_group]
+    # depends_on = [aws_cloudwatch_log_group.example_cw_log_group]
     
     target_groups = [
       {
