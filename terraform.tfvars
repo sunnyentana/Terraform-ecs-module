@@ -15,10 +15,14 @@ containers={
         ecs_service_name = "bhub-frontend-ecs-service"
       #  container_definition_file = "container_definations.json"
         abl_name = "bhub-frontend-ecs"
+        internal = true
         container_port=80
         # cluster_count=true
         # family_name = "poc-frontend-dev"
-
+        env = [
+          {name: "Example", value: "test"},
+          {name: "Example2", value: "test2"}
+        ]
      }
      container2={
 
@@ -28,9 +32,13 @@ containers={
         ecs_service_name = "bhub-frontend-ecs-service-poc"
       #  container_definition_file = "container_definations.json"
         abl_name = "bhub-frontend-ecs-poc"
+        internal = false
         container_port=80
         # cluster_count=false
         # family_name = "poc-frontend-dev"
+        env = [
+          {name: "Example", value: "test"}
+        ]
      }
    
     
