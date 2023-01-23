@@ -4,8 +4,8 @@ resource "aws_ecs_task_definition" "bhub_task_def" {
   container_definitions = <<DEFINITION
 [
   {
-    "name": "nginx",
-    "image": "nginx:latest",
+    "name": "${var.container_name}",
+    "image": "${var.container_name}:latest",
     "essential": true,
     "portMappings": [
       {
