@@ -4,7 +4,7 @@ resource "aws_ecs_task_definition" "example_task_def" {
   container_definitions = jsonencode(
 [
   {
-    "name": "${var.container_name}",
+    "name": "${var.ecs_service_name}",
     "image": "${var.image_name}:latest",
     "essential": true,
     "portMappings": [
@@ -37,7 +37,7 @@ resource "aws_ecs_task_definition" "example_task_def" {
   }
 }
 resource "aws_iam_role" "task_def_role" {
-  name = "ECS-TaskDefinationRole-${var.ecs_service_name}"
+  name = "${var.ecs_service_name}_task_def_role"
   assume_role_policy = jsonencode({
     Version = "2012-10-17"
     Statement = [
@@ -48,12 +48,12 @@ resource "aws_iam_role" "task_def_role" {
         Principal = {
           Service = "ecs-tasks.amazonaws.com"
         }
-      },
+      }
     ]
   })
 }
 resource "aws_iam_role_policy" "ecr-iam-policy" {
-  name = "ecr-read-access${var.ecs_service_name}"
+  name = "${var.ecs_service_name}_task_def_policy"
   role = aws_iam_role.task_def_role.id
   policy = jsonencode({
     "Version": "2012-10-17",

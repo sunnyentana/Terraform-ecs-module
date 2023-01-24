@@ -26,7 +26,7 @@
 
 variable "container_port" {}
 variable "ecs_desired_count" {}
-variable "abl_name" {}
+variable "alb_name" {}
 # variable "cluster_name" {} 
 variable "container_name" {} 
 variable "ecs_service_name" {}
@@ -43,6 +43,5 @@ variable "image_name" {}
 variable "task_environment_variables" {
   default = []
 }
-variable "env_value" {
-  
-}
+variable "env_value" {}
+/* variable "repository_name"{} */

@@ -5,10 +5,23 @@
 #   target_type = "ip"
 #   vpc_id = module.vpc.vpc_id
 # }
+ /* resource "aws_acm_certificate" "cert" {
+  domain_name       = "*.dev.entana.net"
+  validation_method = "DNS"
+
+  tags = {
+    Environment = "dev"
+    name = "${var.alb_name}-cert"
+  }
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}  */
 
   module "alb" {
     source = "terraform-aws-modules/alb/aws"
-    name = var.abl_name
+    name = var.alb_name
     load_balancer_type = "application"
     internal = var.internal
     vpc_id = var.vpc_id
@@ -32,4 +45,13 @@
           target_group_index = 0
       }
     ]
+
+    /* https_listeners = [
+    {
+      port               = 443
+      protocol           = "HTTPS"
+      certificate_arn    = aws_acm_certificate.cert.arn
+      target_group_index = 0
+    } 
+  /* ] */
   }

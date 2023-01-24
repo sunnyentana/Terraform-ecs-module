@@ -25,7 +25,7 @@ module "ecs-dev" {
    image_name = each.value.image_name
    container_name = each.value.container_name
    ecs_service_name = each.value.ecs_service_name 
-   abl_name = each.value.abl_name
+   alb_name = each.value.alb_name
    internal = each.value.internal
    ecs_desired_count= each.value.ecs_desired_count
    container_port = each.value.container_port
@@ -59,7 +59,7 @@ containers={
         image_name = "nginx"
         container_name = "nginx" 
         ecs_service_name = "example-frontend-ecs-service"
-        abl_name = "example-frontend-ecs"
+        alb_name = "example-frontend-ecs"
         internal = true
         container_port=80
         
@@ -79,7 +79,7 @@ containers={
 |------------------|-----------------------                              |-------|-------|
 |container_name    |Name of your container                               |string |""     |
 |ecs_service_name  |Name of the service                                  |string |""     |
-|abl_name          |Name of your Load Balancer                           |string |""     |
+|alb_name          |Name of your Load Balancer                           |string |""     |
 |container_port    |Port on which it is going to be exposed              |number |       |
 |internal          |For making Load balancer internal or internet facing |bool   |false  |
 |ecs_desired_count |count of the task by your service at a moment        |number |1      |

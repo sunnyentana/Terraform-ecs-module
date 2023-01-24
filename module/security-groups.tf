@@ -6,7 +6,7 @@ module "alb-sg" {
   vpc_id      = var.vpc_id
 
   ingress_cidr_blocks = ["0.0.0.0/0"]
-  ingress_rules       = ["http-80-tcp"]
+  ingress_rules       = ["http-80-tcp","https-443-tcp"]
   egress_rules        = ["all-all"]
   # depends_on = [aws_cloudwatch_log_group.example_cw_log_group]
 }
