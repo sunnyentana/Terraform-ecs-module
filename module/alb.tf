@@ -46,12 +46,12 @@
       }
     ]
 
-    /* https_listeners = [
+    https_listeners = [
     {
       port               = 443
       protocol           = "HTTPS"
-      certificate_arn    = aws_acm_certificate.cert.arn
+      certificate_arn    = var.cert_arn
       target_group_index = 0
-    } 
-  /* ] */
-  }
+    }
+   ] 
+}

@@ -27,6 +27,7 @@
 variable "container_port" {}
 variable "ecs_desired_count" {}
 variable "alb_name" {}
+variable "cert_arn" {}
 # variable "cluster_name" {} 
 variable "container_name" {} 
 variable "ecs_service_name" {}

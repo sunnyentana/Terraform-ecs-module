@@ -1,4 +1,4 @@
-cluster_name = "entana-dev"
+cluster_name = "entana-stage"
 publicly_accessible = true
 # cluster_arn= "arn:aws:ecs:us-east-1:597544333513:cluster/bhub-frontend-dev" 
 # log_name = "poc_log"
@@ -14,6 +14,7 @@ containers={
       #  container_definition_file = "container_definations.json"
         alb_name = "entana-backend-alb"
         internal = true
+        cert_arn = "arn:aws:acm:us-east-1:727085843824:certificate/f90c85e2-8f15-4edf-a01e-f29724f5c0fc"
         /* repository_name = "entana-backend" */
         
         container_port=80
@@ -48,6 +49,7 @@ containers={
       #  container_definition_file = "container_definations.json"
         alb_name = "entana-graphql-alb"
         internal = false
+        cert_arn = "arn:aws:acm:us-east-1:727085843824:certificate/f90c85e2-8f15-4edf-a01e-f29724f5c0fc"
         /* repository_name = "graphql" */
         
         container_port=80
