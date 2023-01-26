@@ -35,6 +35,9 @@
           backend_protocol = "HTTP"
           backend_port = 80
           target_type = "ip"
+          health_check = {
+          matcher             = "200-499"
+      }
       }
     ]
 
@@ -43,6 +46,17 @@
           port = 80
           protocol = "HTTP"
           target_group_index = 0
+           
+           
+          default_action =  {
+            type = "redirect"
+
+             redirect = {
+               port        = "443"
+               protocol    = "HTTPS"
+               status_code = "HTTP_301"
+             }
+          }
       }
     ]
 
