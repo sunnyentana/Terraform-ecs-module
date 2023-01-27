@@ -21,21 +21,7 @@ containers={
         # cluster_count=true
         # family_name = "poc-frontend-dev"
         envs = [ 
-          {name: "PORT" , value: "4000"},
-          {name: "NODE_ENV" , value: "development"},
-          {name: "DATABASE_NAME" , value: "entanadb"},
-          {name: "DATABASE_HOST" , value: "34.229.173.72"},
-          {name: "DATABASE_PORT" , value: "5432"},
-          {name: "DATABASE_USER" , value: "entana"},
-          {name: "DATABASE_PASSWORD" , value: "entana"},
-          {name: "JWT_SECRET" , value: "shh"},
-          {name: "FRONTEND_URL" , value: "https://dev.entana.net"},
-          {name: "SOCKET_URL" , value: "https://sockettemp.entana.net"},
-          {name: "MAIL_HOST" , value: "smtp.sendgrid.net"},
-          {name: "MAIL_PORT" , value: "587"},
-          {name: "MAIL_USERNAME" , value: "apikey"},
-          {name: "MAIL_PASSWORD" , value: "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"},
-          {name: "MAIL_FROM_ADDRESS" , value: "donotreply@entana.net"}
+          {name: "PORT" , value: "4000"}
           ]
 
      }
@@ -57,14 +43,6 @@ containers={
         # family_name = "poc-frontend-dev"
         envs = [ 
           {name: "PORT" , value: "3030"},
-          {name: "NODE_ENV=" , value: "development"},
-          {name: "DATABASE_NAME" , value: "postgres"},
-          {name: "DATABASE_HOST" , value: "entanadb.cblpzaiabz2u.us-east-1.rds.amazonaws.com"},
-          {name: "DATABASE_PORT" , value: "5432"},
-          {name: "DATABASE_USER" , value: "entanadb"},
-          {name: "DATABASE_PASSWORD" , value: "entanadb"},
-          {name: "JWT_SECRET" , value: "shh"},
-          {name: "REST_URL" , value: "https://dev-rest.entana.net"},
           ]
      }
    
